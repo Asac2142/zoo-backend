@@ -19,6 +19,15 @@ npm install
 node index.js
 ```
 
+## Description
+
+- This application make use of these tools:
+  - ExpressJS
+  - Body-Parser
+  - Joi
+  - CORS
+
+
 ## API Requests
 
 ```bash
