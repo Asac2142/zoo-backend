@@ -16,26 +16,6 @@ app.get('/api/animals', (req, res) => {
     res.send(data);
 });
 
-app.get('/api/animals/injured', (req, res) => {    
-    const injured = data.animals.filter(animal => !animal.active);
-    
-    if (injured.length === 0) {
-        res.status(404).send({message: 'no injured animals yet!'});
-        return;
-    }
-    res.send(injured);
-});
-
-app.get('/api/animals/healthy', (req, res) => {        
-    const healthy = data.animals.filter(animal => animal.active);    
-    
-    if (healthy.length === 0) {
-        res.status(404).send({message: 'no healthy animals yet!'});
-        return;
-    }
-    res.send(healthy);
-});
-
 app.post('/api/animals', (req, res) => {    
     const {error, value} = validate(req.body);
         
@@ -69,7 +49,7 @@ app.delete('/api/animals/delete/:id', (req, res) => {
     }
 
     const animalDeleted = data.animals.splice(pos, 1);    
-    res.send({ animalDeleted: animalDeleted });
+    res.send(...animalDeleted);
 });
 
 app.put('/api/animals/', (req, res) => {
@@ -110,4 +90,6 @@ const generateId = () => {
 }
 
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
+const server = app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
+
+module.exports = server;
