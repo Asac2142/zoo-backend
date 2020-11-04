@@ -41,7 +41,7 @@ app.post('/api/animals', (req, res) => {
         return;
     } else {
         const animal = {
-            id: data.animals.length + 1,
+            id: generateId(),
             family: value.family,
             specie: value.specie,
             name: value.name,
@@ -100,8 +100,12 @@ app.patch('/api/animals/:id', (req, res) => {
 });
 
 const findAnimalPosition = (id) => {
-    return data.animals.findIndex(animal => animal.id === parseInt(id));
+    return data.animals.findIndex(animal => animal.id === id);
 };
+
+const generateId = () => {
+    return `${Math.floor(Math.random(100) * 100) + 1}${new Date().getMilliseconds()}`;
+}
 
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
