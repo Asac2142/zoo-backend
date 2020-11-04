@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const schema = Joi.object({
-    id: Joi.number().required(),
+    id: Joi.string().required(),
     family: Joi.string().required(),
     specie: Joi.string().required(),
     name: Joi.string().alphanum().min(3).max(15).required(),
