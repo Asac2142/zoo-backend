@@ -19,6 +19,12 @@ npm install
 node index.js
 ```
 
+## Test
+
+```javascript
+npm test
+```
+
 ## Description
 
 - This application make use of these tools:
