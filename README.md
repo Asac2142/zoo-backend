@@ -1,7 +1,7 @@
 # # ![alt text](https://yo-toronto.com/wp-content/uploads/2016/05/YoToronto_LandmarkIcon_TOZoo-map.png) 
 # Zoo Ecuador - API
 
-API REST service for [Zoo Ecuador](https://github.com/Asac2142/zoo-frontend/edit/master/README.md)
+API REST service for [Zoo Ecuador](https://github.com/Asac2142/zoo-frontend)
 
 ## Requirements
 
