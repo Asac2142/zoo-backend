@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3142;
+const app = express();
 const data = require('./db/data');
 const validate = require('./schema/schema');
-const app = express();
+
+app.use(cors());
 app.use(jsonParser);
 
 
@@ -85,8 +88,7 @@ app.put('/api/animals/', (req, res) => {
     res.send(value);
 });
 
-app.patch('/api/animals/:id', (req, res) => {
-    const active = req.body.active;
+app.patch('/api/animals/:id', (req, res) => {    
     const id = req.params.id;
     const pos = findAnimalPosition(id);
 
@@ -95,7 +97,7 @@ app.patch('/api/animals/:id', (req, res) => {
         return;
     }
 
-    data.animals[pos].active = active;
+    data.animals[pos].active = true;
     res.send(data.animals[pos]);
 });
 
