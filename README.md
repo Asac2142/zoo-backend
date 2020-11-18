@@ -38,8 +38,8 @@ npm test
 
 ```bash
 PATCH   http://localhost:3142/api/animals/{id}
-PUT     http://localhost:3142/api/animals/ - requeries {body}
-POST    http://localhost:3142/api/animals - requeries {body}
+PUT     http://localhost:3142/api/animals/ - requires {body}
+POST    http://localhost:3142/api/animals - requires {body}
 GET     http://localhost:3142/api/animals/
 DELETE  http://localhost:3142/api/animals/delete/{id}
 ```
